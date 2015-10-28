@@ -1,0 +1,153 @@
+{% extends "base.twig" %}
+
+{% block content %}
+    <div class="content-wrapper">
+        <article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
+            <section class="article-content">
+                {% if post.title %}
+                    <div class="hero-unit small-hero {{ post.get_field('page_header_image') }}">
+                        <div class="large-8 large-offset-2 small-12 columns">
+                            <div class="hero-unit__table">
+                                <div class="hero-unit__wrap">
+                                    <h2 class="hero-unit__title">{{post.title}}</h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+                <div class="article-body row">
+                    <div class="small-12 columns large-blurb">
+                        {{post.content}}
+                    </div>
+                    <div class="small-12 columns">
+                        <form id="falconeGetStarted" method="post" data-abide>
+                            <input type="hidden" name="submitted" id="submitted" value="true" />
+                            <div class="row get-started-form">
+                                <div class="medium-6 medium-offset-3 small-12 columns">
+                                    <span class="large-blurb">Check all that apply</span>
+                                </div>
+                                <div class="medium-6 medium-offset-3 small-12 columns">
+                                    <div class="checkbox-container"><input name="mortgage" id="mortgage" type="checkbox"><label for="mortgage">Mortgage</label></div>
+                                    <div class="checkbox-container"><input name="student" id="student" type="checkbox"><label for="student">Student</label></div>
+                                    <div class="checkbox-container"><input name="creditcard" id="creditcard" type="checkbox"><label for="creditcard">Credit Card</label></div>
+                                    <div class="checkbox-container"><input name="casinomarker" id="casinomarker" type="checkbox"><label for="casinomarker">Casino Marker</label></div>
+                                    <div class="checkbox-container"><input name="medical" id="medical" type="checkbox"><label for="medical">Medical</label></div>
+                                    <div class="checkbox-container"><input name="carloan" id="carloan" type="checkbox"><label for="carloan">Car Loan</label></div>
+                                    <div class="checkbox-container"><input name="irstaxdebt" id="irstaxdebt" type="checkbox"><label for="irstaxdebt">IRS Tax Debt</label></div>
+                                    <div class="checkbox-container"><input name="timeshare" id="timeshare" type="checkbox"><label for="timeshare">Time-Share</label></div>
+                                    <div class="checkbox-container"><input name="rv" id="rv" type="checkbox"><label for="rv">Recreational Vehicle</label></div>
+                                    <div class="checkbox-container"><input name="lineofcredit" id="lineofcredit" type="checkbox"><label for="lineofcredit">Line of Credit</label></div>
+                                    <div class="checkbox-container"><input name="other" id="other" type="checkbox"><label for="other">Other</label></div>
+                                </div>
+                                <div class="medium-6 medium-offset-3 small-12 columns">
+                                    <div class="row collapse">
+                                        <label for="goalDropdown">What's Your Goal? <small>required</small>
+                                            <select name="goal" id="goalDropdown" class="medium" required>
+                                                <option value="">Select a goal</option>
+                                                <option value="getahome">Get a Home</option>
+                                                <option value="betterterms">Get Better Loan or Credit Card Terms</option>
+                                                <option value="financialhealth">Increase Your Financial Health</option>
+                                                <option value="relievestress">Relieve Financial Stress</option>
+                                                <option value="improvecredit">Improve Your Credit Report</option>
+                                            </select>
+                                        </label>
+                                        <small class="error">Please select a goal.</small>
+                                    </div>
+                                </div>
+                                <div class="medium-6 medium-offset-3 small-12 columns">
+                                    <span class="large-blurb">Contact information</span>
+                                </div>
+                                <div class="medium-3 medium-offset-3 small-12 columns">
+                                    <input name="firstname" id="firstname" type="text" placeholder="First name" required />
+                                    <small class="error">First name is required.</small>
+                                </div>
+                                <div class="medium-3 small-12 columns end">
+                                    <input name="lastname" id="lastname" type="text" placeholder="Last name" required />
+                                    <small class="error">Last name is required.</small>
+                                </div>
+                                <div class="medium-3 medium-offset-3 small-12 columns">
+                                    <input name="phone" id="phone" type="text" placeholder="Phone number" />
+                                </div>
+                                <div class="medium-3 small-12 columns end">
+                                    <input name="email" id="email" type="email" placeholder="Email" required />
+                                    <small class="error">A valid email address is required.</small>
+                                </div>
+                                <div class="medium-6 medium-offset-3 small-12 columns end">
+                                    <textarea name="comments" placeholder="Questions or comments"></textarea>
+                                </div>
+                                <div class="small-12 column text-center">
+                                    <div class="g-recaptcha" data-sitekey="6LffhA8TAAAAALuFmGgG0xogg7WEVG8nArz96Q6v"></div>
+                                </div>
+                                <div class="small-12 column text-center">
+                                    <input value="Submit" type="submit" />
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </div><!-- /content-wrapper -->
+{% endblock %}
+
+{% block javascripts %}
+    <script type="text/javascript">
+        $(document).ready(function() {
+            var debtInputs = [
+                "mortgage",
+                "student",
+                "creditcard",
+                "casinomarker",
+                "medical",
+                "carloan",
+                "irstaxdebt",
+                "timeshare",
+                "rv",
+                "lineofcredit",
+                "other"
+            ];
+
+            var goalInputs = [
+                "getahome",
+                "betterterms",
+                "financialhealth",
+                "relievestress",
+                "improvecredit"
+            ];
+
+            var otherInputs = [
+                "firstname",
+                "lastname",
+                "email",
+                "phone"
+            ];
+
+            debtInputs.forEach(function(debtInput, index, array) {
+                if(getParameterByName(debtInput)) {
+                    $('#' + debtInput).prop('checked', true);
+                    console.log(debtInput);
+                }
+            });
+
+            goalInputs.forEach(function(goalInput, index, array) {
+                if(getParameterByName("goal") == goalInput) {
+                    $('#goalDropdown').val(goalInput);
+                    console.log(goalInput);
+                }
+            });
+
+            otherInputs.forEach(function(otherInput, index, array) {
+                var otherValue = getParameterByName(otherInput);
+                if(otherValue) {
+                    $('#' + otherInput).val(otherValue);
+                }
+            });
+        });
+        function getParameterByName(name) {
+            name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+            var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+                    results = regex.exec(location.search);
+            return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+        }
+    </script>
+{% endblock %}

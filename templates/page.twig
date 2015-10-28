@@ -1,0 +1,87 @@
+{% extends "base.twig" %}
+
+{% block content %}
+	<div class="content-wrapper">
+		<article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
+			<section class="article-content">
+				{% if post.title %}
+					<div class="hero-unit small-hero {{ post.get_field('page_header_image') }}">
+						<div class="large-8 large-offset-2 medium-12 small-12 columns">
+							<div class="hero-unit__table">
+								<div class="hero-unit__wrap">
+									<h2 class="hero-unit__title">{{post.title}}</h2>
+								</div>
+							</div>
+						</div>
+					</div>
+				{% endif %}
+				<div class="article-body row">
+					<div class="small-12 columns">
+					{{post.content}}
+					</div>
+				</div>
+			</section>
+		</article>
+	</div><!-- /content-wrapper -->
+	<div class="blue-get-started full-width-blue text-center">
+		<h2>Ready To Get Started?</h2>
+		<span class="large-blurb">Sign up for your free credit evaluation and consultation today!</span>
+		<form id="footerDebtForm">
+			<div class="row">
+				<div class="large-12 columns">
+					<div class="blue-select">
+						<label>
+							<select class="debt-select">
+								<option value="">Select Your Type Of Debt</option>
+								<option value="mortgage">Mortgage</option>
+								<option value="student">Student</option>
+								<option value="creditcard">Credit Card</option>
+								<option value="casinomarker">Casino Marker</option>
+								<option value="medical">Medical</option>
+								<option value="carloan">Car Loan</option>
+								<option value="irstaxdebt">IRS Tax Debt</option>
+								<option value="timeshare">Time-Share</option>
+								<option value="rv">Recreational Vehicle</option>
+								<option value="lineofcredit">Line of Credit</option>
+								<option value="other">Other</option>
+							</select>
+						</label>
+					</div>
+				</div>
+				<div class="large-4 large-offset-2 medium-6 small-12 columns">
+					<input name="firstname" type="text" placeholder="First name" />
+				</div>
+				<div class="large-4 medium-6 small-12 columns end">
+					<input name="lastname" type="text" placeholder="Last name" />
+				</div>
+				<div class="large-8 large-offset-2 medium-12 small-12 columns end">
+					<input name="phone" type="text" placeholder="Phone number" />
+				</div>
+				<div class="large-8 large-offset-2 medium-12 small-12 columns end">
+					<input name="email" type="text" placeholder="Email" />
+				</div>
+				<div class="large-12 column text-center">
+					<input value="Get Started" type="submit" />
+				</div>
+			</div>
+		</form>
+	</div>
+{% endblock %}
+
+{% block javascripts %}
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('#footerDebtForm').submit(function() {
+				var url_params = {};
+				url_params[$(this).find('.debt-select').val()] = "on";
+				url_params = $.param(url_params) + '&' + $(this).serialize();
+				redirectToGetStarted(url_params);
+				return false;
+			});
+		});
+
+		function redirectToGetStarted(params) {
+			window.location.replace(window.location + '/get-started?' + params);
+		}
+	</script>
+{% endblock %}

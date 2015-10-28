@@ -1,0 +1,90 @@
+
+<div class="row">
+    <div class="large-3 medium-3 small-12 columns footer-navigation">
+        {% for item in footer_menu_1.get_items %}
+            {% if item.get_children %}
+                <h6><a href="{{item.get_link}}">{{item.title}}</a></h6>
+                <ul>
+                    {% for child in item.get_children %}
+                        <li><a href="{{child.get_link}}">{{child.title}}</a></li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <a href="{{item.get_link}}">{{item.title}}</a>
+            {% endif %}
+        {% endfor %}
+    </div>
+    <div class="large-3 medium-3 small-12 columns footer-navigation">
+        {% for item in footer_menu_2.get_items %}
+            {% if item.get_children %}
+                <h6><a href="{{item.get_link}}">{{item.title}}</a></h6>
+                <ul>
+                    {% for child in item.get_children %}
+                        <li><a href="{{child.get_link}}">{{child.title}}</a></li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <a href="{{item.get_link}}">{{item.title}}</a>
+            {% endif %}
+        {% endfor %}
+    </div>
+
+    <div class="large-3 medium-3 small-12 columns footer-navigation">
+        {% for item in footer_menu_3.get_items %}
+            {% if item.get_children %}
+                <h6><a href="{{item.get_link}}">{{item.title}}</a></h6>
+                <ul>
+                    {% for child in item.get_children %}
+                        <li><a href="{{child.get_link}}">{{child.title}}</a></li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <a href="{{item.get_link}}">{{item.title}}</a>
+            {% endif %}
+        {% endfor %}
+    </div>
+
+    <div class="large-3 medium-3 small-12 columns footer-navigation">
+        <h6>Accreditations & Certifications</h6>
+        <ul>
+            {% for item in accreditation_menu.get_items %}
+                <li><a href="{{item.get_path}}">{{item.title}}</a><br /></li>
+            {% endfor %}
+        </ul>
+
+        <h6>Licenses</h6>
+        <ul>
+            {% for item in licenses_menu.get_items %}
+                <li><a href="{{item.get_path}}">{{item.title}}</a><br /></li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+<div class="row social-logos">
+    <div class="medium-3 small-12 columns text-center">
+        <img src="{{ site.theme.link }}/imgs/bbb.jpg" />
+    </div>
+    <div class="medium-6 small-12 columns text-center end">
+        <a href="{{ falcone_options.falcone_contact_facebook }}" class="social-button social-fb"></a>
+        <a href="{{ falcone_options.falcone_contact_twitter }}" class="social-button social-tw"></a>
+        <a href="{{ falcone_options.falcone_contact_youtube }}" class="social-button social-yt"></a>
+        <a href="{{ falcone_options.falcone_contact_linkedin }}" class="social-button social-in"></a>
+    </div>
+</div>
+<div class="row bottom-row">
+    <div class="medium-5 small-12 columns">
+        <p>&copy; Copyright 2015 Damian Falcone & Co. All Rights Reserved</p>
+    </div>
+    <div class="medium-2 small-12 columns">
+        {% if falcone_options.falcone_contact_hiring|length > 0 %}
+        <a href="{{ falcone_options.falcone_contact_hiring }}"><img src="{{site.theme.link}}/imgs/nowhiring.png" /></a>
+        {% endif %}
+    </div>
+    <div class="medium-5 small-12 columns final-menu">
+        <p>
+            {% for item in final_menu.get_items %}
+                <a href="{{item.get_path}}">{{item.title}}</a>
+            {% endfor %}
+        </p>
+    </div>
+</div>

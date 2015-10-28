@@ -1,0 +1,53 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+    <div class="hero-unit small-hero gallery-hero">
+        <div class="large-8 large-offset-2 medium-12 small-12 columns">
+            <div class="hero-unit__table">
+                <div class="hero-unit__wrap">
+                    <h2 class="hero-unit__title">Results and Testimonials</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="large-12 columns">
+            <a href="/results">&larr; Back to Results</a>
+        </div>
+    </div>
+    <div class="content-wrapper row">
+        <div class="results-post small-12 columns">
+            <div class="results-header">
+                <h1>{{ post.get_field('result_callout') }}</h1>
+            </div>
+            <div class="article-body results-body">
+                <div class="results-title">
+                <span>{{ post.title }}</span>
+                </div>
+                {{post.content}}
+                <div class="text-center">
+                    <ul class="share-buttons">
+                        <li><button class="click-to-share"><img src="{{site.theme.link}}/imgs/share.png">Share</button></li>
+                        <li><a href="https://www.facebook.com/sharer/sharer.php?u={{ post.link|url_encode }}&t={{ post.link|url_encode }}" title="Share on Facebook" target="_blank"><img src="{{site.theme.link}}/imgs/Facebook.png"></a></li>
+                        <li><a href="https://twitter.com/intent/tweet?text={{ post.title|url_encode }}:%20{{ post.link|url_encode }}" target="_blank" title="Tweet"><img src="{{site.theme.link}}/imgs/Twitter.png"></a></li>
+                        <li><a href="http://www.linkedin.com/shareArticle?mini=true&url={{ post.link|url_encode }}&title={{ post.title|url_encode }}" target="_blank" title="Share on LinkedIn"><img src="{{site.theme.link}}/imgs/LinkedIn.png"></a></li>
+                        <li><a href="mailto:?subject={{ post.title|url_encode }}&body={{ post.link|url_encode }}" target="_blank" title="Email"><img src="{{site.theme.link}}/imgs/Email.png"></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    <script type="text/javascript">
+        $(document.body).on("opened.fndtn.clearing", function(event) {
+            $('.clearing-caption').css('display','block').append($('<button class="img-zoom">Zoom</button>'));
+            $('.img-zoom').click(function() {
+                $('.visible-img').toggleClass('zoomed-in');
+            });
+        });
+    </script>
+{% endblock %}

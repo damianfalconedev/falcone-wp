@@ -1,0 +1,98 @@
+{% block html_head_container %}
+
+{% include 'html-header.twig' %}
+	{% block head %}
+	{% endblock %}
+	</head>
+{% endblock %}
+
+	<body class="{{body_class}}" data-template="base.twig">
+		<header class="header" >
+			{% block header %}
+
+                <div class="row">
+                    <div class="large-4 large-offset-4 medium-12 small-12 columns text-center header-logo-container">
+                        <a href="{{ site.url }}"><img src="{{site.theme.link}}/imgs/FalconeLogo.jpg" /></a><br />
+                        <span>{{site.description}}</span>
+                    </div>
+                    <div class="large-4 medium-12 small-12 columns text-center">
+                        <div class="header-info-wrap text-left">
+                            <span><div class="mail-icon"></div><a href="mailto:{{ falcone_options.falcone_contact_email }}">{{ falcone_options.falcone_contact_email }}</a></span><br />
+                            <span><div class="phone-icon"></div><a href="tel:{{ falcone_options.falcone_contact_phone }}">{{ falcone_options.falcone_contact_phone }}</a></span><br />
+                            <div class="buy-a-home"><a href="{{site.url}}/buy-a-home"><img src="{{site.theme.link}}/imgs/house.png">Buy A Home</a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="sticky">
+                    <nav class="top-bar" data-topbar role="navigation">
+                        <ul class="title-area">
+                            <li class="name">
+                                <h1><a href="#"></a></h1>
+                            </li>
+                            <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+                            <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+                        </ul>
+
+                        <section class="top-bar-section">
+
+                            <!-- Left Nav Section -->
+                            <ul class="center-buttons">
+                                {% for item in menu.get_items %}
+                                    {% if item.get_children %}
+                                        <li class="has-dropdown">
+                                            <a href="{{item.get_link}}">{{item.title}}</a>
+                                            <ul class="dropdown">
+                                                {% for child in item.get_children %}
+                                                    <li><a href="{{child.get_link}}">{{child.title}}</a></li>
+                                                {% endfor %}
+                                            </ul>
+                                        </li>
+                                    {% else %}
+                                        <li>
+                                            <a href="{{item.get_link}}">{{item.title}}</a>
+                                        </li>
+                                    {% endif %}
+                                {% endfor %}
+                                <li class="has-form">
+                                    <a href="{{site.url}}/get-started" class="">Get Started</a>
+                                </li>
+                            </ul>
+                        </section>
+                    </nav>
+                </div>
+			{% endblock %}
+		</header>
+
+		<section id="content" role="main" class="content-wrapper">
+			{% if title %}<h1>{{title}}</h1>{% endif %}
+			<div class="wrapper {{sidebar_class}}">
+				{% block content %}
+					Sorry, no content
+				{% endblock %}
+			</div>
+			{% if sidebar %}
+				<aside class="layout-sidebar">
+					{{sidebar}}
+				</aside>
+			{% endif %}
+		</section>
+
+		{% block footer %}
+			<footer id="footer">
+				{% include 'footer.twig' %}
+			</footer>
+			{{ function('wp_footer') }}
+		{% endblock %}
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="{{site.theme.link}}/js/vendor/jquery-1.11.3.min.js"><\/script>')</script>
+        <script src="{{site.theme.link}}/js/foundation.min.js"></script>
+        <script type="text/javascript">
+            $(document).foundation();
+        </script>
+        {% block javascripts %}
+            <script type="text/javascript">
+                // Additional javascript for child templates
+            </script>
+        {% endblock %}
+	</body>
+</html>

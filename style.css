@@ -1,0 +1,1290 @@
+/*
+ * Theme Name: Damian Falcone & Co.
+ * Description: Proprietary theme for use by Damian Falcone & Co.
+ * Author: Stable Technologies
+*/
+
+/*! HTML5 Boilerplate v5.2.0 | MIT License | https://html5boilerplate.com/ */
+
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+html {
+    color: #222;
+    font-size: 1em;
+    line-height: 1.4;
+}
+
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * These selection rule sets have to be separate.
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+/*
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+    vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+    resize: vertical;
+}
+
+/* ==========================================================================
+   Browser Upgrade Prompt
+   ========================================================================== */
+
+.browserupgrade {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Oswald', sans-serif;
+    font-weight: normal;
+}
+
+p, span {
+    font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+}
+
+/* ======
+   HEADER
+   ====== */
+
+.g-recaptcha div:first-child div:first-child {
+    margin: 0 auto;
+    margin-bottom: 1em;
+}
+
+.header-logo-container span {
+    font-size: 1em;
+    font-weight: normal; /* changed from lighter */
+    font-style: italic;
+}
+
+.header-info-wrap {
+    display: inline-block;
+    margin-top: 2em;
+}
+
+.header-info-wrap .buy-a-home, .results-post button {
+    background-color: #4990E2;
+    line-height: 1;
+    border: 0;
+    height: 34px;
+    -webkit-appearance: none;
+    color: white;
+    font-weight:bold;
+    text-transform: uppercase;
+    font-size:0.9em;
+    padding:0 1.5em;
+    border-radius: 5px;
+    margin-top: 1em;
+}
+
+.header-info-wrap .buy-a-home {
+    display: table;
+    margin-bottom: 1em;
+}
+
+.header-info-wrap .buy-a-home a {
+    display: table-cell;
+    vertical-align: middle;
+    color: white;
+}
+
+.header-info-wrap .buy-a-home a img {
+    margin-top: -6px;
+    margin-right: 1em;
+}
+
+.header-info-wrap button img {
+    vertical-align: text-top;
+    margin-right: 1em;
+}
+
+/* ========
+   ARCHIVES
+   ======== */
+
+.results-post button img {
+    margin-right: 1em;
+    margin-bottom: 4px;
+}
+
+.header-info-wrap span {
+    font-weight: normal; /* changed from lighter */
+}
+
+.header-info-wrap span div {
+    display: inline-block;
+    margin-right: 1em;
+}
+
+.mail-icon {
+    background: url('imgs/FalconeSprite.png') no-repeat -296px -89px;
+    width: 18px;
+    height: 13px;
+}
+
+.phone-icon {
+    background: url('imgs/FalconeSprite.png') no-repeat -297px -110px;
+    width: 18px;
+    height: 18px;
+}
+
+ul.pagination {
+    display: inline-block;
+}
+
+
+/* NAVIGATION */
+
+.center-buttons .has-form a {
+    background-color: #25B34B;
+    line-height: 1;
+    border: 0;
+    height: 30px;
+    margin-top: 7px;
+    -webkit-appearance: none;
+    color: white;
+    font-weight:bold;
+    text-transform: uppercase;
+    font-size:0.9em;
+    padding:8px 1.5em;
+    border-radius: 5px;
+}
+
+@media only screen and (min-width: 1100px) {
+    .top-bar {
+        text-align: center;
+        background: #2B3848;
+    }
+
+    ul.center-buttons {
+        display: inline-block;
+    }
+}
+
+@media only screen and (min-width: 1100px) {
+    .top-bar-section li:not(.has-form) a:not(.button), .top-bar-section .has-form {
+        background: #2B3848;
+    }
+}
+
+.top-bar-section .has-dropdown > a:after {
+    background: url(imgs/downarrow.png) no-repeat center;
+    width: 14px;
+    height: 9px;
+    border: none;
+}
+
+.menu-icon {
+    padding-top: 1.2rem;
+}
+
+.top-bar.expanded {
+    background: #333333;
+}
+
+.top-bar .toggle-topbar.menu-icon {
+    margin-top: -34px;
+}
+
+
+/* HOME */
+
+.hero-unit {
+    background-image: url('imgs/largebackground.jpg');
+    background-repeat: no-repeat;
+    background-position: 50%;
+    height:450px;
+    width:100%;
+    color:white;
+    text-align:center;
+
+}
+
+.hero-unit__table {
+    display:table;
+    width: 100%;
+    height:450px;
+}
+
+.hero-unit__wrap {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.hero-unit__title {
+    text-transform: uppercase;
+    color:white;
+}
+
+.blue-select select {
+    background-color: transparent;
+    width: 268px;
+    line-height: 1;
+    border: 0;
+    height: 44px;
+    -webkit-appearance: none;
+    color: white;
+    font-weight:bold;
+    text-transform: uppercase;
+    font-size:0.9em;
+    padding-left:20px;
+}
+
+.blue-select option {
+    color: black;
+    text-transform: none;
+}
+
+.blue-select {
+    width: 250px;
+    height: 44px;
+    overflow: hidden;
+    background: url(imgs/downarrow.png) no-repeat 95% 50% #488EDF;
+    margin: 0 auto;
+    border-radius: 5px;
+    margin-top: 1.5em;
+}
+
+.home-licenses {
+    margin-top: 1em;
+}
+
+.home-licenses li, .home-large-licenses li {
+    display: table;
+}
+
+.license-logo {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    height: 125px;
+}
+
+.license-logo img {
+    max-height: 125px;
+}
+
+.home-licenses .license-logo span{
+    text-transform: uppercase;
+}
+
+.home-large-licenses {
+    margin-top: 2em;
+}
+
+.full-width-blue {
+    width:100%;
+    background-color:#293946;
+    color:white;
+}
+
+.home-blurb {
+    text-align:center;
+    padding:30px 0;
+}
+
+.home-blurb h3 {
+    font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+    color:white;
+    font-weight: normal; /* changed from lighter */
+}
+
+.home-three-reasons {
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+.home-three-reasons img {
+    border-radius: 50%;
+    max-width:250px;
+}
+
+.home-three-reasons h4 {
+    font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+}
+
+.home-credit-repair {
+    text-align: center;
+    margin-top: 3em;
+}
+
+.large-blurb {
+    font-weight: normal; /* changed from lighter */
+    font-size: 1.5em;
+}
+
+.home-repair-details {
+    margin-top: 3em;
+}
+
+@media only screen and (min-width: 40em) {
+    .home-process .tabs.vertical {
+        min-width: 40%;
+        width: 40%;
+        padding-right: 2em;
+        margin-bottom: 0 !important;
+    }
+}
+
+.home-process {
+    margin-top: 1em;
+}
+
+.home-process .tab-title a {
+    font-size: 0.9em;
+    font-weight: bold;
+    color: #727480;
+}
+
+.home-process .tab-title.active a {
+    color: #293946;
+}
+
+.home-process {
+    border: 5px solid #EFEFEF;
+    margin-bottom: 2em;
+}
+
+.tabs-content {
+    margin-bottom: 0;
+}
+
+.tab-title .slide-number {
+    float: left;
+    display: inline-block;
+    width: 41px;
+    height: 41px;
+    margin:7px 15px 0 10px;
+}
+
+.tab-title .first-slide {
+    background: url('imgs/FalconeSprite.png') no-repeat -356px -2px;
+}
+
+.tab-title.active .first-slide {
+    background: url('imgs/FalconeSprite.png') no-repeat -398px -2px;
+}
+
+.tab-title.active .second-slide {
+    background: url('imgs/FalconeSprite.png') no-repeat -398px -43px;
+}
+
+.tab-title .second-slide {
+    background: url('imgs/FalconeSprite.png') no-repeat -356px -43px;
+}
+
+.tab-title.active .third-slide {
+    background: url('imgs/FalconeSprite.png') no-repeat -398px -85px;
+}
+
+.tab-title .third-slide {
+    background: url('imgs/FalconeSprite.png') no-repeat -356px -85px;
+}
+
+.tab-title.active .fourth-slide {
+    background: url('imgs/FalconeSprite.png') no-repeat -398px -127px;
+}
+
+.tab-title .fourth-slide {
+    background: url('imgs/FalconeSprite.png') no-repeat -356px -127px;
+}
+
+.tab-title.active .fifth-slide {
+    background: url('imgs/FalconeSprite.png') no-repeat -398px -169px;
+}
+
+.tab-title .fifth-slide {
+    background: url('imgs/FalconeSprite.png') no-repeat -356px -169px;
+}
+
+.tabs-content .content {
+    text-align: center;
+}
+
+.tabs-content .content p {
+    text-align: left;
+    padding: 0 2em;
+    margin-bottom: 0;
+}
+
+.slide-icon {
+    display: inline-block;
+    margin: 1em 0;
+}
+
+.first-slide-icon {
+    background: url('imgs/FalconeSprite.png') no-repeat -7px -297px;
+    width: 83px;
+    height: 100px;
+}
+
+.second-slide-icon {
+    background: url('imgs/FalconeSprite.png') no-repeat -94px -298px;
+    width: 118px;
+    height: 99px;
+}
+
+.third-slide-icon {
+    background: url('imgs/FalconeSprite.png') no-repeat -216px -297px;
+    width: 93px;
+    height: 100px;
+}
+
+.fourth-slide-icon {
+    background: url('imgs/FalconeSprite.png') no-repeat -313px -298px;
+    width: 97px;
+    height: 102px;
+}
+
+.fifth-slide-icon {
+    background: url('imgs/FalconeSprite.png') no-repeat -419px -300px;
+    width: 123px;
+    height: 95px;
+}
+
+.home-get-started-first {
+    text-align: center;
+    margin-bottom: 3em;
+    background-color: #F3F3F3;
+    padding: 2em 0;
+    width: 100%;
+}
+
+.home-get-started-first .debt-types, .home-get-started-first .debt-form {
+    margin-top: 2em;
+}
+
+.home-get-started-first input[type="text"],
+.get-started-form input[type="text"],
+.get-started-form input[type="email"],
+.get-started-form textarea,
+.real-estate input,
+.real-estate select {
+    border-radius: 5px;
+}
+
+.home-get-started-first input[type="submit"] {
+    background-color: #4990E2;
+    line-height: 1;
+    border: 0;
+    height: 44px;
+    -webkit-appearance: none;
+    color: white;
+    font-weight:bold;
+    text-transform: uppercase;
+    font-size:0.9em;
+    padding:0 1.5em;
+    border-radius: 5px;
+}
+
+.home-get-started-first .debt-types {
+    text-align: center;
+}
+
+.debt-types p {
+    margin-bottom: 0;
+}
+
+.debt-type {
+    width: 70px;
+    height: 70px;
+    display: inline-block;
+    margin: 1em 1em 1.2em 1em;
+    cursor: pointer;
+}
+
+.debt-type span {
+    margin-top: 78px;
+    float: left;
+    width: 70px;
+    font-size: 0.8em;
+    line-height: 1em;
+}
+
+.hidden-debt-types {
+    display: none;
+}
+
+.mortgage-debt {
+    background: url('imgs/FalconeSprite.png') no-repeat -2px -2px;
+}
+
+.mortgage-debt.active {
+    background: url('imgs/FalconeSprite.png') no-repeat -2px -146px;
+}
+
+.student-debt {
+    background: url('imgs/FalconeSprite.png') no-repeat -2px -74px;
+}
+
+.student-debt.active {
+    background: url('imgs/FalconeSprite.png') no-repeat -2px -217px;
+}
+
+.cc-debt {
+    background: url('imgs/FalconeSprite.png') no-repeat -73px -2px;
+}
+
+.cc-debt.active {
+    background: url('imgs/FalconeSprite.png') no-repeat -73px -146px;
+}
+
+.casino-debt {
+    background: url('imgs/FalconeSprite.png') no-repeat -73px -74px;
+}
+
+.casino-debt.active {
+    background: url('imgs/FalconeSprite.png') no-repeat -73px -217px;
+}
+
+.medical-debt {
+    background: url('imgs/FalconeSprite.png') no-repeat -144px -2px;
+}
+
+.medical-debt.active {
+    background: url('imgs/FalconeSprite.png') no-repeat -144px -145px;
+}
+
+.auto-debt {
+    background: url('imgs/FalconeSprite.png') no-repeat -144px -74px;
+}
+
+.auto-debt.active {
+    background: url('imgs/FalconeSprite.png') no-repeat -144px -217px;
+}
+
+.timeshare-debt {
+    background: url('imgs/FalconeSprite.png') no-repeat -286px -2px;
+}
+
+.timeshare-debt.active {
+    background: url('imgs/FalconeSprite.png') no-repeat -286px -146px;
+}
+
+.rv-debt {
+    background: url('imgs/FalconeSprite.png') no-repeat -215px -74px;
+}
+
+.rv-debt.active {
+    background: url('imgs/FalconeSprite.png') no-repeat -215px -217px;
+}
+
+.irs-debt {
+    background: url('imgs/FalconeSprite.png') no-repeat -215px -2px;
+}
+
+.irs-debt.active {
+    background: url('imgs/FalconeSprite.png') no-repeat -215px -145px;
+}
+
+.line-debt {
+    background: url('imgs/FalconeSprite.png') no-repeat -1px -399px;
+}
+
+.line-debt.active {
+    background: url('imgs/FalconeSprite.png') no-repeat -2px -470px;
+}
+
+.other-debt {
+    background: url('imgs/FalconeSprite.png') no-repeat -73px -399px;
+}
+
+.other-debt.active {
+    background: url('imgs/FalconeSprite.png') no-repeat -73px -470px;
+}
+
+.home-why-falcone h2 {
+    text-align: center;
+}
+
+.home-why-falcone img {
+    margin-top: 3em;
+}
+
+.home-triad .columns {
+    margin-top: 3em;
+}
+
+.home-triad .columns h4 {
+    font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: normal; /* changed from lighter */
+}
+
+.home-certified {
+    margin-top: 3em;
+}
+
+.home-distinctions .columns {
+    margin-top: 3em;
+}
+
+.home-distinctions h5 {
+    font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+}
+
+.home-testimonials-image {
+    margin-top: 3em;
+}
+
+.home-testimonials {
+    padding: 1em;
+}
+
+.home-testimonials h2, .home-testimonials a {
+    color: white;
+    text-align: center;
+}
+
+.highlighted-testimonial {
+    padding: 3em;
+    padding-bottom: 0;
+}
+
+.home-unique {
+    margin-top: 3em;
+}
+
+.home-unique h2 {
+    text-align: center;
+}
+
+.home-featured {
+    margin-top: 3em;
+}
+
+.home-featured h5 {
+    font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+    margin-bottom: 0;
+}
+
+.blue-get-started {
+    padding: 2em 0;
+    background-color: #374C5F;
+}
+
+.blue-get-started h2 {
+    color: white;
+}
+
+.blue-get-started .blue-select {
+    margin-bottom: 2em;
+}
+
+.blue-get-started input[type="text"] {
+    border-radius: 5px;
+    color: white;
+    background-color: #4E6584;
+    border: 0;
+}
+
+.real-estate input[type="submit"],
+.blue-get-started input[type="submit"],
+.get-started-form input[type="submit"] {
+    background-color: #25B34B;
+    line-height: 1;
+    border: 0;
+    height: 44px;
+    -webkit-appearance: none;
+    color: white;
+    font-weight:bold;
+    text-transform: uppercase;
+    font-size:0.9em;
+    padding:0 1.5em;
+    border-radius: 5px;
+}
+
+.article-body .blue-get-started {
+    padding: 1em;
+}
+
+.article-body .blue-get-started h2 {
+    font-size:1.75em;
+}
+
+.article-body .blue-get-started .large-blurb {
+    font-size: 1.25em;
+}
+
+/* ======
+   FOOTER
+   ====== */
+
+#footer {
+    background-color: #2B3848;
+    padding-top: 5em;
+}
+
+.footer-navigation h6 a, .footer-navigation h6 {
+    font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+    color: white;
+    text-transform: uppercase;
+    font-size: 0.9em;
+}
+
+.footer-navigation ul {
+    list-style: none;
+}
+
+.footer-navigation a, #footer p {
+    color: lightgrey;
+    font-size: 0.8em;
+}
+
+.social-logos .columns {
+    margin-top: 2em;
+}
+
+.social-button {
+    display: inline-block;
+    margin: 0.5em;
+}
+
+a.social-fb {
+    background: url('imgs/FalconeSprite.png') no-repeat -376px -234px;
+    width: 31px;
+    height: 31px;
+}
+
+a.social-fb:hover {
+    background: url('imgs/FalconeSprite.png') no-repeat -376px -266px;
+    width: 31px;
+    height: 31px;
+}
+
+a.social-tw {
+    background: url('imgs/FalconeSprite.png') no-repeat -407px -234px;
+    width: 31px;
+    height: 31px;
+}
+
+a.social-tw:hover {
+    background: url('imgs/FalconeSprite.png') no-repeat -407px -266px;
+    width: 31px;
+    height: 31px;
+}
+
+a.social-yt {
+    background: url('imgs/FalconeSprite.png') no-repeat -438px -234px;
+    width: 31px;
+    height: 31px;
+}
+
+a.social-yt:hover {
+    background: url('imgs/FalconeSprite.png') no-repeat -438px -266px;
+    width: 31px;
+    height: 31px;
+}
+
+a.social-in {
+    background: url('imgs/FalconeSprite.png') no-repeat -469px -234px;
+    width: 31px;
+    height: 31px;
+}
+
+a.social-in:hover {
+    background: url('imgs/FalconeSprite.png') no-repeat -469px -266px;
+    width: 31px;
+    height: 31px;
+}
+
+.bottom-row .columns {
+    margin-top: 1em;
+    text-align: center;
+}
+
+.bottom-row a {
+    margin-left: 1em;
+    color: lightgrey;
+}
+
+@media only screen and (min-width: 40.0625em) {
+    .bottom-row .columns:first-child {
+        text-align: left;
+        padding-top: 40px;
+    }
+    .bottom-row .columns:last-child {
+        text-align: right;
+        padding-top: 40px;
+    }
+}
+
+/* =======
+   RESULTS
+   ======= */
+
+.results-title {
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 2em;
+}
+
+.results-header {
+    background-color: #2B3848;
+    text-align: center;
+    padding: 1em 0;
+    margin-top: 2em;
+    min-height: 110px;
+    display: table;
+    width: 100%;
+}
+
+.results-header-cell {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.results-header h1 {
+    color: white;
+    font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+    font-size: 2em;
+}
+
+.tease-results .results-header h1 {
+    font-size: 1.5em;
+}
+
+.results-body {
+    background-color: #F5F5F5;
+    margin-bottom: 2em;
+    padding: 2em 1em 0 1em;
+}
+
+.debt-nav {
+    background: #F5F5F5;
+    padding:1em;
+    margin-top: 1em;
+}
+
+ul.share-buttons {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+ul.share-buttons li {
+    display: none;
+}
+
+ul.share-buttons li:first-child {
+    display:inline;
+}
+
+ul.share-buttons:hover li:first-child {
+    margin-right: 1em;
+}
+ul.share-buttons:hover li {
+    display:inline;
+}
+
+.visible-img.zoomed-in .clearing-caption {
+    position: fixed;
+    z-index: 9999;
+    background: transparent;
+}
+
+.visible-img.zoomed-in img {
+    max-height: none;
+    max-width: 95%;
+}
+
+.clearing-caption .img-zoom {
+    margin-left: 1em;
+}
+
+@media only screen and (min-width: 40.0625em) {
+    .clearing-assembled .clearing-container .visible-img.zoomed-in {
+        overflow-y: scroll;
+        overflow-x: hidden;
+    }
+}
+
+
+/* ====
+   HERO
+   ==== */
+
+.small-hero {
+    height:150px;
+    margin-bottom: 2em;
+}
+
+.small-hero .hero-unit__table {
+    height:150px;
+}
+
+.page-hero {
+    background: url('imgs/heros/desk.jpg');
+}
+
+.gallery-hero {
+    background: url('imgs/heros/results.jpg');
+}
+
+.small-hero.desk {
+    background: url('imgs/heros/desk.jpg');
+}
+
+.small-hero.magglass {
+    background: url('imgs/heros/magglass.jpg');
+}
+
+.small-hero.redchairs {
+    background: url('imgs/heros/redchairs.jpg');
+}
+
+/* ====
+   PAGE
+   ==== */
+
+body {
+    /* Hiding the overflowing hr, since it will
+    extend past the edge of the viewport */
+    overflow-x: hidden;
+}
+
+hr {
+    width: 9999px;
+    margin-left:-5000px;
+    height: 16px;
+    background: #f3f3f5;
+    border: 0;
+}
+
+.article-body {
+    margin-bottom: 2em;
+}
+
+.wp-caption {
+    border: solid 4px #FFFFFF;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2);
+    display: inline-block;
+    line-height: 0;
+    max-width: 100%;
+    transition: all 200ms ease-out;
+    margin-bottom: 1.25rem;
+}
+
+img.alignright, .alignright { float: right; margin: 0 0 1em 1em; }
+img.alignleft, .alignleft { float: left; margin: 0 1em 1em 0; }
+img.aligncenter { display: block; margin-left: auto; margin-right: auto; }
+.aligncenter { display: block; margin-left: auto; margin-right: auto; }
+
+p.wp-caption-text {
+    margin-bottom: 0;
+    text-align: center;
+    margin-top:0.25em;
+    font-style: italic;
+}
+
+/* ===========
+   GET STARTED
+   =========== */
+.large-blurb p {
+    font-size: 1em;
+    font-weight: normal; /* changed from lighter */
+    text-align: center;
+}
+
+.checkbox-container {
+    width: 50%;
+    padding-left: 1em;
+}
+
+.checkbox-container:nth-child(odd) {
+    float:right;
+    padding-left: 2em;
+}
+
+.checkbox-container:last-child:nth-child(odd) {
+    width: 100%;
+    text-align: center;
+    padding: 0;
+}
+
+/* =============
+   VIDEO GALLERY
+   ============= */
+
+#video-playlist {
+    list-style: none;
+    margin: 0;
+}
+
+#video-playlist li {
+    margin-bottom: 1em;
+}
+
+.tease-videos {
+    margin-top: 2em;
+}
+
+.tease-videos img {
+    margin-bottom: 1em;
+}
+
+.tease-videos span {
+    display: inline-block;
+    margin-bottom: 0.5em;
+}
+
+.tease-videos p {
+    color: grey;
+}
+
+/* =======
+   Sprites
+   ======= */
+
+.credit-repair-icon {
+    background: url('imgs/FalconeSprite.png') no-repeat -441px -2px;
+    width: 107px;
+    height: 230px;
+}
+
+.documents-icon {
+    background: url('imgs/FalconeSprite.png') no-repeat -294px -224px;
+    width: 61px;
+    height: 61px;
+}
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/*
+ * Hide visually and from screen readers:
+ */
+
+.hidden {
+    display: none !important;
+}
+
+/*
+ * Hide only visually, but have it available for screen readers:
+ * http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ */
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+/*
+ * Extends the .visuallyhidden class to allow the element
+ * to be focusable when navigated to via the keyboard:
+ * https://www.drupal.org/node/897638
+ */
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+
+/*
+ * Hide visually and from screen readers, but maintain layout
+ */
+
+.invisible {
+    visibility: hidden;
+}
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+
+@media only screen and (min-width: 35em) {
+    /* Style adjustments for viewports that meet the condition */
+}
+
+@media print,
+(-webkit-min-device-pixel-ratio: 1.25),
+(min-resolution: 1.25dppx),
+(min-resolution: 120dpi) {
+    /* Style adjustments for high resolution devices */
+}
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid the additional HTTP request:
+   http://www.phpied.com/delay-loading-your-print-css/
+   ========================================================================== */
+
+@media print {
+    *,
+    *:before,
+    *:after,
+    *:first-letter,
+    *:first-line {
+        background: transparent !important;
+        color: #000 !important; /* Black prints faster:
+                                   http://www.sanbeiji.com/archives/953 */
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    /*
+     * Don't show links that are fragment identifiers,
+     * or use the `javascript:` pseudo protocol
+     */
+
+    a[href^="#"]:after,
+    a[href^="javascript:"]:after {
+        content: "";
+    }
+
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    /*
+     * Printing Tables:
+     * http://css-discuss.incutio.com/wiki/Printing_Tables
+     */
+
+    thead {
+        display: table-header-group;
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    img {
+        max-width: 100% !important;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}

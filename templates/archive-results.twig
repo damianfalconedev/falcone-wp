@@ -1,0 +1,63 @@
+{% extends "base.twig" %}
+
+{% block content %}
+    <div class="hero-unit small-hero gallery-hero">
+        <div class="large-8 large-offset-2 medium-12 small-12 columns">
+            <div class="hero-unit__table">
+                <div class="hero-unit__wrap">
+                    <h2 class="hero-unit__title">Results and Testimonials</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="large-12 columns">
+        <dl class="sub-nav debt-nav">
+            <dt>Debt:</dt>
+            {% for item in debt_types_menu.get_items %}
+            {% set is_active = (item.get_path|split('/')[2] == selected_debt_type) %}
+            <dd {% if is_active %}class="active"{% endif %}>
+                <a href="{{item.get_path}}">{{item.title}}</a>
+            </dd>
+            {% endfor %}
+        </dl>
+    </div>
+
+    {% set i = 0 %}
+    {% for post in posts %}
+        {% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
+        {% set i = i + 1 %}
+        {% if i%3 == 0 %}
+            <div class="clearfix"></div>
+        {% endif %}
+    {% endfor %}
+
+    <div class="clearfix"></div>
+    <div class="text-center">
+        <ul class="pagination">
+            {% if pagination.prev %}
+                <li class="arrow {{pagination.prev.link|length ? '' : 'unavailable'}}"><a href="{{pagination.prev.link}}">&laquo;</a>
+            {% endif %}
+            {% for page in pagination.pages %}
+                {% if page.link %}
+                    <li class="{{page.class}}"><a href="{{page.link}}">{{page.title}}</a></li>
+                {% else %}
+                    <li class="current {{page.class}}"><a href="">{{page.title}}</a></li>
+                {% endif %}
+            {% endfor %}
+            {% if pagination.next %}
+                <li class="arrow {{pagination.next.link|length ? '' : 'unavailable'}}"><a href="{{pagination.next.link}}">&raquo;</a></li>
+            {% endif %}
+        </ul>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    <script type="text/javascript">
+        $(document.body).on("opened.fndtn.clearing", function(event) {
+            $('.clearing-caption').css('display','block').append($('<button class="img-zoom">Zoom</button>'));
+            $('.img-zoom').click(function() {
+                $('.visible-img').toggleClass('zoomed-in');
+            });
+        });
+    </script>
+{% endblock %}

@@ -1,0 +1,24 @@
+<div class="tease-results results-post large-4 medium-6 small-12 columns">
+    <div class="results-header">
+        <div class="results-header-cell">
+            <h1>{{ post.get_field('result_callout') }}</h1>
+        </div>
+    </div>
+    <div class="article-body results-body">
+        <div class="results-title">
+            <span>{{ post.title }}</span>
+        </div>
+        {{post.content}}
+        <p class="text-center"><a href="{{ post.link }}">View Full Results</a></p><br />
+
+        <div class="text-center">
+        <ul class="share-buttons">
+            <li><button class="click-to-share"><img src="{{site.theme.link}}/imgs/share.png">Share</button></li>
+            <li><a href="https://www.facebook.com/sharer/sharer.php?u={{ post.link|url_encode }}&t={{ post.link|url_encode }}" title="Share on Facebook" target="_blank"><img src="{{site.theme.link}}/imgs/Facebook.png"></a></li>
+            <li><a href="https://twitter.com/intent/tweet?text={{ post.title|url_encode }}:%20{{ post.link|url_encode }}" target="_blank" title="Tweet"><img src="{{site.theme.link}}/imgs/Twitter.png"></a></li>
+            <li><a href="http://www.linkedin.com/shareArticle?mini=true&url={{ post.link|url_encode }}&title={{ post.title|url_encode }}" target="_blank" title="Share on LinkedIn"><img src="{{site.theme.link}}/imgs/LinkedIn.png"></a></li>
+            <li><a href="mailto:?subject={{ post.title|url_encode }}&body={{ post.link|url_encode }}" target="_blank" title="Email"><img src="{{site.theme.link}}/imgs/Email.png"></a></li>
+        </ul>
+        </div>
+    </div>
+</div>

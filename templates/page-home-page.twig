@@ -1,0 +1,417 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+    <div class="content-wrapper">
+
+        <div class="hero-unit">
+
+            <div class="large-8 large-offset-2 medium-12 small-12 columns">
+                    <div class="hero-unit__table">
+                        <div class="hero-unit__wrap">
+                            <ul data-orbit data-options="slide_number:false;timer_speed:5000;navigation_arrows:false;resume_on_mouseout:true">
+
+                                <li data-orbit-slide="title-1">
+                                    <h2 class="hero-unit__title">{{ post.get_field('home_main_title') }}</h2>
+                                    <span class="hero-unit__subtitle">{{ post.get_field('home_subtitle') }}</span>
+                                </li>
+                                <li data-orbit-slide="title-2">
+                                    <h2 class="hero-unit__title">{{ post.get_field('home_main_title_2') }}</h2>
+                                    <span class="hero-unit__subtitle">{{ post.get_field('home_subtitle_2') }}</span>
+                                </li>
+                                <li data-orbit-slide="title-3">
+                                    <h2 class="hero-unit__title">{{ post.get_field('home_main_title_3') }}</h2>
+                                    <span class="hero-unit__subtitle">{{ post.get_field('home_subtitle_3') }}</span>
+                                </li>
+                            </ul>
+
+                            <form>
+                                <div class="row">
+                                    <div class="large-12 columns">
+                                        <div class="blue-select">
+                                            <label>
+                                                <select id="goalSelect">
+                                                    <option value="">{{ post.get_field('home_goal_dropdown_text') }}</option>
+                                                    <option value="getahome">Get a Home</option>
+                                                    <option value="betterterms">Get Better Loan or Credit Card Terms</option>
+                                                    <option value="financialhealth">Increase Your Financial Health</option>
+                                                    <option value="relievestress">Relieve Financial Stress</option>
+                                                    <option value="improvecredit">Improve Your Credit Report</option>
+                                                </select>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+            </div>
+
+        </div>
+
+        <div class="home-licenses row">
+            <div class="small-12 columns">
+                <ul class="medium-block-grid-6 small-block-grid-3">
+                    <li><div class="license-logo"><img src="{{site.theme.link}}/imgs/logo_iapda.jpg" /></div></li>
+                    <li><div class="license-logo"><img src="{{site.theme.link}}/imgs/logo_irs.jpg" /></div></li>
+                    <li><div class="license-logo"><img src="{{site.theme.link}}/imgs/logo_nevada.jpg" /></div></li>
+                    <li><div class="license-logo"><img src="{{site.theme.link}}/imgs/logo_foreclosure.jpg" /></div></li>
+                    <li><div class="license-logo"><img src="{{site.theme.link}}/imgs/logo_bi.jpg" /></div></li>
+                    <li><div class="license-logo"><img src="{{site.theme.link}}/imgs/logo_glvar.jpg" /></div></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="home-blurb full-width-blue">
+            <div class="row">
+                <h3 class="home-blurb__text">{{ post.get_field('home_success_blurb') }}</h3>
+            </div>
+        </div>
+
+        <div class="home-credit-repair row">
+            <div class="large-8 large-offset-2 medium-12 small-12 columns">
+                <h2>What Can Credit Repair Do For You?</h2>
+                <span class="home-credit-repair__details large-blurb">
+                    {{ post.get_field('home_what_can_credit_repair_do_for_you') }}
+                </span>
+            </div>
+        </div>
+
+        <div class="home-three-reasons row">
+            <div class="text-center small-12 medium-4 columns">
+                <img src="{{ TimberImage(post.get_field('home_help_buy_a_home_image')).src|resize(200,200) }}" />
+                <h4>Help buy a home</h4>
+                {{ post.get_field('home_help_buy_a_home_blurb') }}
+            </div>
+            <div class="text-center small-12 medium-4 columns">
+                <img src="{{ TimberImage(post.get_field('home_get_better_rates_on_loans_image')).src|resize(200,200) }}" />
+                <h4>Get better rates on loans</h4>
+                {{ post.get_field('home_get_better_rates_on_loans_blurb') }}
+            </div>
+            <div class="text-center small-12 medium-4 columns">
+                <img src="{{ TimberImage(post.get_field('home_increase_your_financial_wellness_image')).src|resize(200,200) }}" />
+                <h4>Increase your financial wellness</h4>
+                {{ post.get_field('home_increase_your_financial_wellness_blurb') }}
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="text-center small-12 columns">
+                <h2>Our Process Puts You First</h2>
+            </div>
+        </div>
+
+        <div class="home-process row">
+            <ul class="tabs vertical" data-tab>
+                <li class="tab-title active">
+                    <div class="first-slide slide-number"></div>
+                    <a href="#credit-evaluation">Credit Evaluation</a>
+                </li>
+                <li class="tab-title">
+                    <div class="second-slide slide-number"></div>
+                    <a href="#free-consultation">Free Consultation</a>
+                </li>
+                <li class="tab-title">
+                    <div class="third-slide slide-number"></div>
+                    <a href="#service-agreement">Service Agreement Signed</a>
+                </li>
+                <li class="tab-title">
+                    <div class="fourth-slide slide-number"></div>
+                    <a href="#plan-executed">Financial Plan Executed</a>
+                </li>
+                <li class="tab-title">
+                    <div class="fifth-slide slide-number"></div>
+                    <a href="#goals-reached">Goals Reached, Dreams Delivered</a>
+                </li>
+            </ul>
+            <div class="tabs-content">
+                <div class="content active" id="credit-evaluation">
+                    <div class="first-slide-icon slide-icon"></div>
+                    <p>{{ post.get_field('home_credit_evaluation_slide') }}</p>
+                </div>
+                <div class="content" id="free-consultation">
+                    <div class="second-slide-icon slide-icon"></div>
+                    <p>{{ post.get_field('home_free_consultation_slide') }}</p>
+                </div>
+                <div class="content" id="service-agreement">
+                    <div class="third-slide-icon slide-icon"></div>
+                    <p>{{ post.get_field('home_service_agreement_signed_slide') }}</p>
+                </div>
+                <div class="content" id="plan-executed">
+                    <div class="fourth-slide-icon slide-icon"></div>
+                    <p>{{ post.get_field('home_financial_plan_executed_slide') }}</p>
+                </div>
+                <div class="content" id="goals-reached">
+                    <div class="fifth-slide-icon slide-icon"></div>
+                    <p>{{ post.get_field('home_goals_reached_dreams_delivered_slide') }}</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="home-get-started-first">
+            <div class="row">
+                <div class="large-8 large-offset-2 medium-12 small-12 columns end blurb-container">
+                    <h2>Get Started Today</h2>
+                    <span class="home-get-started__blurb large-blurb">
+                        {{ post.get_field('home_get_started_today') }}
+                    </span>
+                </div>
+                <div class="large-6 medium-6 small-12 columns debt-types">
+                    <p>Select the Debts You Have:</p>
+                    <div data-debt-type="mortgage" class="debt-type mortgage-debt"><span>Mortgage</span></div>
+                    <div data-debt-type="student" class="debt-type student-debt"><span>Student</span></div>
+                    <div data-debt-type="creditcard" class="debt-type cc-debt"><span>Credit Card</span></div>
+                    <div data-debt-type="casinomarker" class="debt-type casino-debt"><span>Casino Marker</span></div>
+                    <div data-debt-type="medical" class="debt-type medical-debt"><span>Medical</span></div>
+                    <div data-debt-type="carloan" class="debt-type auto-debt"><span>Car Loan</span></div>
+                    <div data-debt-type="irstaxdebt" class="debt-type irs-debt"><span>IRS Tax Debt</span></div>
+                    <div data-debt-type="timeshare" class="debt-type timeshare-debt"><span>Time-Share</span></div>
+                    <div data-debt-type="rv" class="debt-type rv-debt"><span>Recreational Vehicle</span></div>
+                    <div data-debt-type="lineofcredit" class="debt-type line-debt"><span>Line of Credit</span></div>
+                    <div data-debt-type="other" class="debt-type other-debt"><span>Other</span></div>
+                </div>
+                <div class="large-6 medium-6 small-12 columns debt-form">
+                    <p>Contact Information:</p>
+                    <form id="multiDebtSelect">
+                        <div class="hidden-debt-types">
+                            <input name="mortgage" id="mortgage" type="checkbox">
+                            <input name="student" id="student" type="checkbox">
+                            <input name="creditcard" id="creditcard" type="checkbox">
+                            <input name="casinomarker" id="casinomarker" type="checkbox">
+                            <input name="medical" id="medical" type="checkbox">
+                            <input name="carloan" id="carloan" type="checkbox">
+                            <input name="irstaxdebt" id="irstaxdebt" type="checkbox">
+                            <input name="timeshare" id="timeshare" type="checkbox">
+                            <input name="rv" id="rv" type="checkbox">
+                            <input name="lineofcredit" id="lineofcredit" type="checkbox">
+                            <input name="other" id="other" type="checkbox">
+                        </div>
+                        <div class="row">
+                            <div class="large-4 large-offset-2 medium-6 small-12 columns">
+                                <input name="firstname" type="text" placeholder="First name" />
+                            </div>
+                            <div class="large-4 medium-6 small-12 columns end">
+                                <input name="lastname" type="text" placeholder="Last name" />
+                            </div>
+                            <div class="large-8 large-offset-2 medium-12 small-12 columns end">
+                                <input name="phone" type="text" placeholder="Phone number" />
+                            </div>
+                            <div class="large-8 large-offset-2 medium-12 small-12 columns end">
+                                <input name="email" type="text" placeholder="Email" />
+                            </div>
+                            <div class="large-12 column text-center">
+                                <input value="Get Started" type="submit" />
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="home-why-falcone row">
+            <div class="large-10 large-offset-1 medium-12 small-12 columns end">
+                <h2>Why Choose Damian Falcone & Co?</h2>
+                <span class="home-why-falcone__details">
+                    {{ post.get_field('home_why_choose_damian_falcone_co') }}
+                </span>
+            </div>
+            <div class="large-12 columns text-center">
+                <a href="{{ post.get_field('learn_more_about_damian_falcone_co_link') }}">Learn More About Damian Falcone & Co.</a>
+            </div>
+            <img src="{{site.theme.link}}/imgs/FalconeGroup.jpg" />
+        </div>
+
+        <div class="home-triad row">
+            <div class="medium-4 small-12 columns">
+                <h4>All Debt Types</h4>
+                {{ post.get_field('home_all_debt_types') }}
+            </div>
+            <div class="medium-4 small-12 columns">
+                <h4>Track Record</h4>
+                {{ post.get_field('home_track_record') }}
+            </div>
+            <div class="medium-4 small-12 columns">
+                <h4>No Bankruptcies or Foreclosures</h4>
+                {{ post.get_field('home_no_bankruptcy_foreclosure') }}
+            </div>
+            <div class="small-12 columns text-center">
+                {% set debt_taxonomy = post.get_field('settlement_gallery_link') %}
+                <p>Visit our <a href="{{ site.url }}/{{ debt_taxonomy.taxonomy }}/{{ debt_taxonomy.slug }}">Settlement Gallery</a> of over $20 million in deals executed</p>
+
+            </div>
+        </div>
+
+        <div class="home-certified row">
+            <div class="text-center">
+            <img src="{{ site.theme.link }}/imgs/logo_iapda.jpg" />
+            </div>
+            <div class="large-10 large-offset-1 medium-12 small-12 text-center columns end">
+                <h2>Certified & Licensed</h2>
+                <p class="large-blurb">{{ post.get_field('home_certified_and_licensed') }}</p>
+            </div>
+            <div class="large-12 columns text-center">
+                <a href="{{ post.get_field('why_licensing_matters_link') }}">See Why Licensing Matters</a>
+            </div>
+        </div>
+
+        <div class="home-distinctions row">
+            <div class="large-6 medium-6 small-12 columns">
+                <h5>Accreditation & Certifications:</h5>
+                {% for item in accreditation_menu.get_items %}
+                    <a href="{{item.get_path}}">{{item.title}}</a><br />
+                {% endfor %}
+            </div>
+            <div class="large-6 medium-6 small-12 columns">
+                <h5>Licenses:</h5>
+                {% for item in licenses_menu.get_items %}
+                    <a href="{{item.get_path}}">{{item.title}}</a><br />
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="home-large-licenses row">
+            <div class="small-12 columns">
+                <ul class="medium-block-grid-4 small-block-grid-2">
+                    <li><div class="license-logo"><img src="{{site.theme.link}}/imgs/logo_iapda.jpg" /></div></li>
+                    <li><div class="license-logo"><img src="{{site.theme.link}}/imgs/logo_irs.jpg" /></div></li>
+                    <li><div class="license-logo"><img src="{{site.theme.link}}/imgs/logo_nevada.jpg" /></div></li>
+                    <li><div class="license-logo"><img src="{{site.theme.link}}/imgs/logo_glvar.jpg" /></div></li>
+                </ul>
+            </div>
+            <div class="small-12 columns">
+                <ul class="small-block-grid-2">
+                    <li><div class="license-logo"><img src="{{site.theme.link}}/imgs/logo_fmplarge.jpg" /></div></li>
+                    <li><div class="license-logo"><img src="{{site.theme.link}}/imgs/logo_bilarge.jpg" /></div></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="home-testimonials-image row">
+            <div class="large-12 columns">
+                <img src="{{site.theme.link}}/imgs/FalconeAwards.jpg" />
+            </div>
+        </div>
+
+        <div class="home-testimonials full-width-blue">
+            <div class="row">
+                <div class="small-12 columns">
+                    <ul data-orbit data-options="slide_number:false;">
+                        {% for result in timber_results %}
+                            <li data-orbit-slide="{{ result.post_name }}">
+                                <div class="highlighted-testimonial">
+                                    <a href="{{ result.link }}"><h2>{{ result.title }}</h2></a>
+                                    {{ result.content }}
+                                </div>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                    <div class="text-center">
+                        <a href="/results">View All Results & Testimonials</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="home-repair-details row">
+            <div class="text-center small-12 columns">
+                <h2>We're Not Like Other Credit Repair Companies</h2>
+            </div>
+            <div class="large-2 medium-4 columns show-for-medium-up">
+                <div class="credit-repair-icon"></div>
+            </div>
+            <div class="large-10 medium-8 small-12 columns home-credit-repair__details">
+                {{ post.get_field('home_were_not_like_other_credit_repair_companies') }}
+            </div>
+        </div>
+
+        <div class="home-featured text-center">
+            <h5>Our specialists have been featured on:</h5>
+            <img src="{{site.theme.link}}/imgs/FalconePressLogos.jpg" />
+        </div>
+
+        <div class="blue-get-started full-width-blue text-center">
+            <h2>Ready To Get Started?</h2>
+            <span class="large-blurb">Sign up for your free credit evaluation and consultation today!</span>
+            <form id="footerDebtForm">
+                <div class="row">
+                    <div class="large-12 columns">
+                        <div class="blue-select">
+                            <label>
+                                <select class="debt-select">
+                                    <option value="">Select Your Type Of Debt</option>
+                                    <option value="mortgage">Mortgage</option>
+                                    <option value="student">Student</option>
+                                    <option value="creditcard">Credit Card</option>
+                                    <option value="casinomarker">Casino Marker</option>
+                                    <option value="medical">Medical</option>
+                                    <option value="carloan">Car Loan</option>
+                                    <option value="irstaxdebt">IRS Tax Debt</option>
+                                    <option value="timeshare">Time-Share</option>
+                                    <option value="rv">Recreational Vehicle</option>
+                                    <option value="lineofcredit">Line of Credit</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="large-4 large-offset-2 medium-6 small-12 columns">
+                        <input name="firstname" type="text" placeholder="First name" />
+                    </div>
+                    <div class="large-4 medium-6 small-12 columns end">
+                        <input name="lastname" type="text" placeholder="Last name" />
+                    </div>
+                    <div class="large-8 large-offset-2 medium-12 small-12 columns end">
+                        <input name="phone" type="text" placeholder="Phone number" />
+                    </div>
+                    <div class="large-8 large-offset-2 medium-12 small-12 columns end">
+                        <input name="email" type="text" placeholder="Email" />
+                    </div>
+                    <div class="large-12 column text-center">
+                        <input value="Get Started" type="submit" />
+                    </div>
+                </div>
+            </form>
+        </div>
+
+
+
+    </div><!-- /content-wrapper -->
+
+
+{% endblock %}
+
+{% block javascripts %}
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#footerDebtForm').submit(function() {
+                var url_params = {};
+                url_params[$(this).find('.debt-select').val()] = "on";
+                url_params = $.param(url_params) + '&' + $(this).serialize();
+                redirectToGetStarted(url_params);
+                return false;
+            });
+
+            $('#goalSelect').change(function(){
+                var url_params = {goal: $(this).val()};
+                redirectToGetStarted($.param(url_params));
+            });
+
+            $('#multiDebtSelect').submit(function() {
+                redirectToGetStarted($(this).serialize());
+                return false;
+            });
+
+            $('.debt-type').click(function() {
+                $(this).toggleClass('active');
+                var debtCheckbox = $('#' + $(this).attr('data-debt-type'));
+                debtCheckbox.prop('checked', $(this).hasClass('active'));
+            });
+
+        });
+
+        function redirectToGetStarted(params) {
+            window.location.replace(window.location + '/get-started?' + params);
+        }
+    </script>
+{% endblock %}

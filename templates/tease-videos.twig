@@ -1,0 +1,17 @@
+<div class="tease-videos videos-post large-4 medium-6 small-12 columns">
+    <div class="row">
+        <div class="small-12 text-center columns">
+            {% set video_urls = post.get_field('video_urls')|split(',') %}
+            {% set initial_video_id = video_urls[0]|split('=')[1] %}
+            <a href="{{ post.link }}">
+            <img src="http://img.youtube.com/vi/{{ initial_video_id }}/hqdefault.jpg" />
+            </a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="text-left small-12 columns">
+            <span>{{ post.title }}</span>
+            <p>{{ post.get_field('video_playlist_description')|excerpt(19) }}</p>
+        </div>
+    </div>
+</div>

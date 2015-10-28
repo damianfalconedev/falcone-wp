@@ -1,0 +1,60 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+    <div class="content-wrapper">
+        <article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
+            <section class="article-content">
+                <div class="hero-unit small-hero gallery-hero">
+                    <div class="large-8 large-offset-2 small-12 columns">
+                        <div class="hero-unit__table">
+                            <div class="hero-unit__wrap">
+                                <h2 class="hero-unit__title">Video Gallery</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="text-center small-12 columns">
+                        <h1>{{ post.title }}</h1>
+                        <p>{{ post.get_field('video_playlist_description') }}</p>
+                    </div>
+                </div>
+                <div class="article-body row">
+                    <div class="large-10 medium-8 small-12 columns">
+
+                        <div class="flex-video" id="video-container">
+                            {% set video_urls = post.get_field('video_urls')|split(',') %}
+                            {% set initial_video_id = video_urls[0]|split('=')[1] %}
+                            <iframe width="420" height="315" src="//www.youtube.com/embed/{{ initial_video_id }}" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                    <div class="large-2 medium-4 small-12 columns">
+                        <ul id="video-playlist">
+                        {% for video_url in video_urls %}
+                            {% set video_id = video_url|split('=')[1] %}
+                            <li><a href="{{ video_url }}" data-youtube-id="{{ video_id }}">
+                            <img src="http://img.youtube.com/vi/{{ video_id }}/hqdefault.jpg" />
+                                </a>
+                            </li>
+                        {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </div><!-- /content-wrapper -->
+
+{% endblock %}
+
+{% block javascripts %}
+    <script type="text/javascript">
+        $('#video-playlist a').click(function(e) {
+            e.preventDefault();
+            var youtube_id = $(this).attr('data-youtube-id');
+            $(document).ready(function() {
+                $('#video-container iframe').attr('src', "//www.youtube.com/embed/" + youtube_id);
+            });
+        });
+    </script>
+{% endblock %}
